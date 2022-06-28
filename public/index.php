@@ -1,6 +1,7 @@
 <?php
 $root = dirname(__DIR__) . DIRECTORY_SEPARATOR;
 define('PARTIAL_PATH', $root . 'partial' . DIRECTORY_SEPARATOR);
+session_start();
 ?>
 <head>
   <meta charset="UTF-8">
