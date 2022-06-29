@@ -1,5 +1,9 @@
 <?php
 $root = dirname(__DIR__) . DIRECTORY_SEPARATOR;
+session_start();
+if (isset($_SESSION['user_name'])) {
+  header("location:index.php");
+}
 define('APP_PATH', $root . 'app' . DIRECTORY_SEPARATOR);
 define('PARTIAL_PATH', $root . 'partial' . DIRECTORY_SEPARATOR);
 require APP_PATH.'register.php';

@@ -41,7 +41,7 @@ require APP_PATH.'house-manage.php';
         </a>
         <?php endforeach; ?>
         <?php else: ?>
-          <span class="text-gray-600">你還沒有刊登任何房屋喔。點擊「<a href="./create-house.php" class="text-blue-500 hover:text-blue-700">新增房屋</a>」立即刊登！</span>
+          <span class="text-gray-600">你還沒有刊登任何房屋。點擊「<a href="./create-house.php" class="text-blue-500 hover:text-blue-700">新增房屋</a>」立即刊登！</span>
         <?php endif; ?>
       </div>
     </div>  
