@@ -6,8 +6,8 @@
         <img src="./static/image/logo.png" class="w-32" alt="">
       </div>
       <div class="w-full h-6 hover:h-12 overflow-hidden text-center">
-        <span><?= 'Hi, '.$_SESSION['user_name'] ?></span><br>
-        <a href="./login?logout"><span>Logout</span></a>
+        <span class="text-gray-700"><?= 'Hi, '.$_SESSION['user_name'] ?></span><br>
+        <a href="./login.php?logout"><span class="text-gray-700">登出</span></a>
       </div>
       <ul class="mt-6 space-y-2 tracking-wide">
         <li class="min-w-max">

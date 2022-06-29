@@ -7,7 +7,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['type'])
             FROM tenant
             WHERE `email` = :email AND `enable` = 1';
         $user_type = 'tenant';
-    } else {
+    } elseif ($_POST['type'] === 'landlord') {
         $sql = 'SELECT *
             FROM landlord
             WHERE `email` = :email AND `enable` = 1';
@@ -19,6 +19,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['type'])
         $user = $sth->fetch();
         if ($user) {
             if (password_verify($_POST['password'], $user['password'])) {
+                $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_name'] = $user['name'];
                 $_SESSION['user_type'] = $user_type;
                 if ($user_type === 'landlord') {
