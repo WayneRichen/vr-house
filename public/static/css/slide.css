@@ -10,6 +10,13 @@
 /* Hide the images by default */
 .mySlides {
   display: none;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.mySlides > img {
+  height: 100vh;
+  object-fit: cover;
 }
 
 /* Fading animation */
