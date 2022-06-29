@@ -2,50 +2,50 @@
 $root = dirname(__DIR__) . DIRECTORY_SEPARATOR;
 define('APP_PATH', $root . 'app' . DIRECTORY_SEPARATOR);
 define('PARTIAL_PATH', $root . 'partial' . DIRECTORY_SEPARATOR);
-require APP_PATH.'create-house.php';
+require APP_PATH.'edit-house.php';
 ?>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./static/css/output.css" rel="stylesheet">
-  <title>新增房屋｜看房網</title>
+  <title>編輯房屋｜看房網</title>
 </head>
 <body>
   <div class="min-h-screen flex">
   <?php require PARTIAL_PATH . 'sidebar.php'; ?>
   <div class="w-full px-4">
       <div class="w-full flex justify-between items-center mt-4">
-        <span class="text-gray-600 font-bold text-2xl">新增房屋</span>
+        <span class="text-gray-600 font-bold text-2xl">編輯房屋</span>
       </div>
       <form action="./create-house.php" method="POST">
         <div>
           <label class="text-gray-800 font-semibold block my-3 text-md" for="title">標題</label>
           <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" name="title"
-            id="title" />
+            id="title" value="<?= $house['title'] ?>"/>
         </div>
         <div>
           <label class="text-gray-800 font-semibold block my-3 text-md" for="subtitle">副標題</label>
           <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" name="subtitle"
-            id="subtitle" />
+            id="subtitle" value="<?= $house['subtitle'] ?>"/>
         </div>
         <div>
           <label class="text-gray-800 font-semibold block my-3 text-md" for="region">地區</label>
           <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" name="region"
-            id="region" />
+            id="region" value="<?= $house['region'] ?>"/>
         </div>
         <div>
           <label class="text-gray-800 font-semibold block my-3 text-md" for="rent">租金</label>
-          <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" name="rent" id="rent" />
+          <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" name="rent" id="rent" value="<?= $house['rent'] ?>"/>
         </div>
         <div>
           <label class="text-gray-800 font-semibold block my-3 text-md" for="vr_url">VR 看房網址</label>
-          <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" name="vr_url" id="vr_url" />
+          <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" name="vr_url" id="vr_url" value="<?= $house['vr_url'] ?>"/>
         </div>
         <div>
           <label class="text-gray-800 font-semibold block my-3 text-md" for="description">房屋描述</label>
           <textarea class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" name="description"
-            id="description"></textarea>
+            id="description"><?= $house['description'] ?></textarea>
         </div>
         <div>
           <label class="text-gray-800 font-semibold block my-3 text-md" for="house_img">圖片</label>

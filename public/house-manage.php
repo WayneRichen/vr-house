@@ -1,7 +1,8 @@
 <?php
 $root = dirname(__DIR__) . DIRECTORY_SEPARATOR;
+define('APP_PATH', $root . 'app' . DIRECTORY_SEPARATOR);
 define('PARTIAL_PATH', $root . 'partial' . DIRECTORY_SEPARATOR);
-session_start();
+require APP_PATH.'house-manage.php';
 ?>
 <head>
   <meta charset="UTF-8">
@@ -21,42 +22,27 @@ session_start();
         </a>
       </div>
       <div class="flex flex-col gap-4 ">
-        <a href="#" class="w-full border-2 border-b-4 border-gray-200 rounded-xl hover:bg-gray-50 overflow-hidden">
+        <?php if (count($houses) > 0): ?>
+        <?php foreach ($houses as $house): ?>
+        <a href="edit-house.php?id=<?= $house['id'] ?>" class="w-full border-2 border-b-4 border-gray-200 rounded-xl hover:bg-gray-50 overflow-hidden">
           <div class="flex flex-row">
-            <div class="flex-none w-44 h-36">
-              <img src="https://picsum.photos/seed/2/200/200" class="w-full h-full" />
+            <div class="flex-none w-56 h-48">
+              <img src="<?= $house['images'][0] ?>" class="w-full h-full" />
             </div>
             <div class="ml-2 mt-2">
-              <p class="text-gray-600 font-bold">帶輕便行李.便可入住！可影片看屋</p>
-              <p class="text-gray-400">3房2廳2衛45坪3F/7F電梯大樓</p>
-              <p class="text-gray-400">55,000元/月 押金二個月</p>
+              <p class="text-gray-600 font-bold text-lg"><?= $house['title'] ?></p>
+              <p class="text-gray-400"><?= $house['subtitle'] ?></p>
+              <p class="text-gray-400"><?= $house['region'] ?></p>
+              <p class="text-gray-400"><?= '$'.number_format($house['rent']) ?></p>
               <p class="text-gray-400"
-                style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                溫馨家居家俱齊全.乾淨舒服.生活機能優旁廣闊前港公園.綠地休閒處.福中公園<br>對面有-家樂福.全聯.郵局幼兒園托嬰中心.<br>.樓下有YouBike.百齡國小國中.陽明高中.北士商.公車站｛車位另租&nbsp;}:<br>【屋主出租】:0936-169457李小姐<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line
-                iD:&nbsp;hua3037
-                附近有便利商店、傳統市場、百貨公司、公園綠地、學校、醫療機構、夜市。
-                本房屋近近劍潭捷運站..公車站、士林夜市公車站、士林運動中心捷運站。</p>
+                style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;"><?= $house['description'] ?></p>
             </div>
           </div>
         </a>
-        <a href="#" class="w-full border-2 border-b-4 border-gray-200 rounded-xl hover:bg-gray-50 overflow-hidden">
-          <div class="flex flex-row">
-            <div class="flex-none w-44 h-36">
-              <img src="https://picsum.photos/seed/2/200/200" class="w-full h-full" />
-            </div>
-            <div class="ml-2 mt-2">
-              <p class="text-gray-600 font-bold">帶輕便行李.便可入住！可影片看屋</p>
-              <p class="text-gray-400">3房2廳2衛45坪3F/7F電梯大樓</p>
-              <p class="text-gray-400">55,000元/月 押金二個月</p>
-              <p class="text-gray-400"
-                style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                溫馨家居家俱齊全.乾淨舒服.生活機能優旁廣闊前港公園.綠地休閒處.福中公園<br>對面有-家樂福.全聯.郵局幼兒園托嬰中心.<br>.樓下有YouBike.百齡國小國中.陽明高中.北士商.公車站｛車位另租&nbsp;}:<br>【屋主出租】:0936-169457李小姐<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Line
-                iD:&nbsp;hua3037
-                附近有便利商店、傳統市場、百貨公司、公園綠地、學校、醫療機構、夜市。
-                本房屋近近劍潭捷運站..公車站、士林夜市公車站、士林運動中心捷運站。</p>
-            </div>
-          </div>
-        </a>
+        <?php endforeach; ?>
+        <?php else: ?>
+          <span class="text-gray-600">你還沒有刊登任何房屋喔。點擊「<a href="./create-house.php" class="text-blue-500 hover:text-blue-700">新增房屋</a>」立即刊登！</span>
+        <?php endif; ?>
       </div>
     </div>  
   </div>
