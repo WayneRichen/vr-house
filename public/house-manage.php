@@ -21,13 +21,13 @@ require APP_PATH.'house-manage.php';
           class="mt-2 first-line:text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">新增房屋</button>
         </a>
       </div>
-      <div class="flex flex-col gap-4 ">
+      <div class="flex flex-col gap-4 h-min-screen overflow-scroll">
         <?php if (count($houses) > 0): ?>
         <?php foreach ($houses as $house): ?>
         <a href="edit-house.php?id=<?= $house['id'] ?>" class="w-full border-2 border-b-4 border-gray-200 rounded-xl hover:bg-gray-50 overflow-hidden">
           <div class="flex flex-row">
             <div class="flex-none w-56 h-48">
-              <img src="<?= $house['images'][0] ?>" class="w-full h-full" />
+              <img src="<?= $house['images'][0] ?>" class="w-full h-full object-cover" />
             </div>
             <div class="ml-2 mt-2">
               <p class="text-gray-600 font-bold text-lg"><?= $house['title'] ?></p>
