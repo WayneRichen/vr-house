@@ -14,7 +14,7 @@ require APP_PATH.'house-manage.php';
 <body>
   <div class="min-h-screen flex">
     <?php require PARTIAL_PATH . 'sidebar.php'; ?>
-    <div class="w-full px-4">
+    <div class="w-full px-4 h-screen overflow-scroll">
       <div class="w-full flex justify-between items-center">
         <span class="text-gray-600 font-bold text-2xl">我刊登的房屋</span>
         <a href="./create-house.php"><button type="button"

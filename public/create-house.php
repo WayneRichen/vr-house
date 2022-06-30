@@ -100,4 +100,10 @@ $('input:file').change(function () {
     },
   });
 });
+
+$('form').submit(function(e) {
+    $(':disabled').each(function(e) {
+        $(this).removeAttr('disabled');
+    })
+});
 </script>
