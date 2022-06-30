@@ -5,13 +5,13 @@ class CreateHouse extends LandlordCheck {
         parent::__construct();
         require('db.php');
         $this->conn = $conn;
-        $this->title = isset($_POST['title']) ? $_POST['title'] : '';
-        $this->subtitle = isset($_POST['subtitle']) ? $_POST['subtitle'] : '';
-        $this->region = isset($_POST['region']) ? $_POST['region'] : '';
-        $this->rent = isset($_POST['rent']) ? (int)$_POST['rent'] : '';
-        $this->vr_url = isset($_POST['vr_url']) ? $_POST['vr_url'] : '';
+        $this->title = isset($_POST['title']) ? trim($_POST['title']) : '';
+        $this->subtitle = isset($_POST['subtitle']) ? trim($_POST['subtitle']) : '';
+        $this->region = isset($_POST['region']) ? trim($_POST['region']) : '';
+        $this->rent = isset($_POST['rent']) ? (int)trim($_POST['rent']) : '';
+        $this->vr_url = isset($_POST['vr_url']) ? trim($_POST['vr_url']) : '';
         $this->description = isset($_POST['description']) ? $_POST['description'] : '';
-        $this->house_img = isset($_POST['house_img']) ? json_encode([$_POST['house_img']], true) : '';
+        $this->house_img = isset($_POST['house_img']) ? trim($_POST['house_img']) : '';
     }
 
     public function process() {
@@ -69,7 +69,7 @@ class CreateHouse extends LandlordCheck {
                 'rent' => $this->rent,
                 'vr_url' => $this->vr_url,
                 'description' => $this->description,
-                'images' => $this->house_img,
+                'images' => json_encode([$this->house_img], true),
                 'enable' => 1]);
             header("Refresh: 0; url=house-manage.php");
             exit;

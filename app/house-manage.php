@@ -1,9 +1,6 @@
 <?php
-session_start();
-if (!isset($_SESSION['user_name']) || $_SESSION['user_type'] != 'landlord' || !isset($_SESSION['user_id'])) {
-    header("location: index.php");
-    exit;
-}
+require 'LandlordCheck.php';
+$landLordCheck = new LandlordCheck();
 
 require('db.php');
 $sql = 'SELECT *

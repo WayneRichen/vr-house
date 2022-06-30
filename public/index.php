@@ -9,8 +9,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./static/css/output.css" rel="stylesheet">
   <link href="./static/css/slide.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="./static/js/jquery-3.6.0.min.js"></script>
   <title>看房網</title>
 </head>
 <?php require PARTIAL_PATH . 'navbar.php'; ?>
