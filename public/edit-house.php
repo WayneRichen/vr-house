@@ -35,7 +35,7 @@ if (isset($_POST['title'])) {
           </span>
         </div>
       <?php endif; ?>
-      <form action="./edit-house.php<?= '?id='.$_GET['id'] ?>" method="post" enctype="multipart/form-data">
+      <form class="mb-2" action="./edit-house.php<?= '?id='.$_GET['id'] ?>" method="post" enctype="multipart/form-data">
         <div>
           <label class="text-gray-800 font-semibold block my-3 text-md" for="title">標題</label>
           <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" name="title"
@@ -65,6 +65,7 @@ if (isset($_POST['title'])) {
             id="description" required><?= isset($_POST['description']) ? $_POST['description'] : $house['description'] ?></textarea>
         </div>
         <div>
+        <label class="text-gray-800 font-semibold block my-3 text-md" for="house_img">圖片</label>
           <input type="file" class="form-control-file" name="house_img_upload" id="house_img_upload" accept="image/*">
           <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none" type="text" name="house_img"
             id="house_img" value="<?= isset($_POST['house_img']) ? $_POST['house_img'] : $house['images'][0] ?>" disabled />
@@ -73,11 +74,32 @@ if (isset($_POST['title'])) {
           <button type="submit" class="w-full my-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">編輯房屋</button>
         </div>
       </form>
+      <button class="w-full text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-base px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900" onclick="deleteCheck(<?= $_GET['id'] ?>)">刪除房屋</button>
     </div>
   </div>
 </body>
 
 <script>
+function deleteCheck(id) {
+  if (confirm('確定要刪除嗎？')) {
+    let fd = new FormData();
+    fd.append('id', id);
+
+    $.ajax({
+    url: './delete-house.php',
+    type: 'post',
+    data: fd,
+    contentType: false,
+    processData: false,
+    success: function(response) {
+      response = JSON.parse(response);
+      if (response.status == 'success') {
+        window.location.href = "./house-manage.php";
+      }
+    },
+  });
+  }
+}
 let unsaved = false;
 $(":input").change(function() {
   unsaved = true;
@@ -114,9 +136,10 @@ $("input:file").change(function (){
 });
 
 $('form').submit(function(e) {
-    $(':disabled').each(function(e) {
-        $(this).removeAttr('disabled');
-    })
+  unsaved = false;
+  $(':disabled').each(function(e) {
+    $(this).removeAttr('disabled');
+  })
 });
 
 setInputFilter(document.getElementById("rent"), function(value) {

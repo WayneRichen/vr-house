@@ -113,9 +113,10 @@ $('input:file').change(function () {
 });
 
 $('form').submit(function(e) {
-    $(':disabled').each(function(e) {
-        $(this).removeAttr('disabled');
-    })
+  unsaved = false;
+  $(':disabled').each(function(e) {
+    $(this).removeAttr('disabled');
+  })
 });
 
 setInputFilter(document.getElementById("rent"), function(value) {
