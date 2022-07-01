@@ -1,7 +1,6 @@
 <?php
 class Register {
     function __construct() {
-        session_start();
         require('db.php');
         $this->conn = $conn;
         $this->type = $_POST['type'];
@@ -77,7 +76,7 @@ class Register {
             header("Refresh: 0; url=index.php");
             exit;
         } catch (PDOException $e) {
-            $alert = '系統錯誤，請稍後再試';
+            $alert = $e->getMessage();
             return $alert;
         }
     }
