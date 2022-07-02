@@ -23,7 +23,7 @@ require APP_PATH . 'member.php'
     <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
       <p class="text-sm">會員資料修改成功！</p>
     </div>
-    <? endif; ?>
+    <?php endif; ?>
     <?php if (isset($alert)): ?>
         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
           <strong class="font-bold">錯誤</strong>
