@@ -23,10 +23,13 @@ if (isset($_POST['type'])) {
   <title>帳號註冊｜看房網</title>
 </head>
 <body>
-  <nav class="min-w-screen-lg mx-auto flex justify-between items-center fixed z-10">
-    <a href="./index.php" class="logo">
-      <img src="./static/image/logo.png" class="h-28" height="100%">
-    </a>
+  <nav class="w-full fixed z-10">
+    <div class="w-3/4 mx-auto flex items-center ">
+      <a href="./index.php" class="logo">
+        <img src="./static/image/logo.png" class="h-28" height="100%">
+      </a>
+      <span class="text-2xl font-bold">看房網</sapn>
+    </div>
   </nav>
   <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-md w-full space-y-8">
@@ -68,12 +71,10 @@ if (isset($_POST['type'])) {
           </div>
         </div>
         <div>
-          <button type="submit"
-            class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            註冊
-          </button>
+          <button type="submit" class="mb-2 w-full inline-block px-6 py-2 bg-blue-600 text-white font-medium leading-normal uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">會員註冊</button>
         </div>
       </form>
+      <a href="./login.php"><button type="button" class="w-full inline-block px-6 py-1.5 border-2 border-blue-600 text-blue-600 font-medium leading-normal uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">會員登入</button></a>
     </div>
   </div>
 </body>
