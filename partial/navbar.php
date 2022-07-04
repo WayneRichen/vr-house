@@ -50,8 +50,8 @@
           </select>
         </form>
         <li>
-          <a href="./about.php"
-            class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">關於我們</a>
+          <a href="./faq.php"
+            class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">常見問題</a>
         </li>
         <?php if (isset($_SESSION['user_name'])): ?>
         <li class="flex flex-row">

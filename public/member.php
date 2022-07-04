@@ -2,7 +2,6 @@
 $root = dirname(__DIR__) . DIRECTORY_SEPARATOR;
 define('PARTIAL_PATH', $root . 'partial' . DIRECTORY_SEPARATOR);
 define('APP_PATH', $root . 'app' . DIRECTORY_SEPARATOR);
-
 require APP_PATH . 'member.php'
 ?>
 <head>
@@ -25,11 +24,11 @@ require APP_PATH . 'member.php'
     </div>
     <?php endif; ?>
     <?php if (isset($alert)): ?>
-        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-          <strong class="font-bold">錯誤</strong>
-          <span class="block sm:inline"><?= $alert ?></span>
-        </div>
-        <?php endif; ?>
+      <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+        <strong class="font-bold">錯誤</strong>
+        <span class="block sm:inline"><?= $alert ?></span>
+      </div>
+    <?php endif; ?>
     <div>
       <label for="email-address" class="text-gray-600 font-bold">電子郵件地址</label>
       <input id="email-address" name="email" type="email" value="<?= $user['email'] ?>" disabled

@@ -14,19 +14,19 @@ session_start();
 </head>
 <?php require PARTIAL_PATH . 'navbar.php'; ?>
 <div class="w-full min-h-screen">
-    <div class="slideshow-container">
-      <div class="mySlides fade">
-        <img src="./static/image/slide1.jpg" style="width:100%">
-      </div>
-
-      <div class="mySlides fade">
-        <img src="./static/image/slide2.jpg" style="width:100%">
-      </div>
-
-      <div class="mySlides fade">
-        <img src="./static/image/slide3.jpg" style="width:100%">
-      </div>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="./static/image/slide1.jpg" style="width:100%">
     </div>
+
+    <div class="mySlides fade">
+      <img src="./static/image/slide2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <a href="./faq.php"><img src="./static/image/slide3.jpg" style="width:100%"></a>
+    </div>
+  </div>
 </div>
 
 <script>

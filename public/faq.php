@@ -16,10 +16,10 @@ session_start();
   <?php require PARTIAL_PATH . 'navbar.php'; ?>
   <div class="max-w-screen-lg mx-auto mb-4 py-24">
     <div class="w-full text-center">
-      <span class="text-4xl">常見問題</sapn>
+      <span class="text-4xl font-bold text-gray-700">常見問題</sapn>
     </div>
     <div class="w-full space-y-4">
-      <span class="text-2xl">如何上傳 VR 環景相片？</span>
+      <span class="text-2xl text-gray-700">如何上傳 VR 環景相片？</span>
       <div>
         1. 首先前往 <a class="text-blue-700" href="https://momento360.com/">momento360</a> 網站
         <img src="./static/image/進入momento 360網站.png">
@@ -39,6 +39,22 @@ session_start();
       <div>
         5. 點選「上傳照片」
         <img src="./static/image/上傳照片.png">
+      </div>
+      <div>
+        6. 點選剛剛上傳的照片
+        <img src="./static/image/進入上傳照片.png">
+      </div>
+      <div>
+        7. 點選「分享連結」
+        <img src="./static/image/點選分享連結.png">
+      </div>
+      <div>
+        8. 點選「創造一個連結」
+        <img src="./static/image/創造一個連結.png">
+      </div>
+      <div>
+        9. 回到後台貼上即完成！
+        <img src="./static/image/來到頁面貼上即可完成!.png">
       </div>
     </div>
   </div>
