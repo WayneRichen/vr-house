@@ -24,7 +24,7 @@ session_start();
     </div>
 
     <div class="mySlides fade">
-      <a href="./faq.php"><img src="./static/image/slide3.jpg" style="width:100%"></a>
+      <a href="./faq.php"><img src="./static/image/slide3.png" style="width:100%"></a>
     </div>
   </div>
 </div>

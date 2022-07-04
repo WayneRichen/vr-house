@@ -54,7 +54,7 @@ if (isset($_POST['title'])) {
             id="rent" value="<?= isset($_POST['rent']) ? $_POST['rent'] : '' ?>" required />
         </div>
         <div>
-          <label class="text-gray-800 font-semibold block my-3 text-md" for="vr_url">VR 看房網址</label>
+        <label class="text-gray-800 font-semibold block mt-3 text-md" for="vr_url">VR 看房網址</label><a class="text-sm text-blue-700" href="./faq.php">如何上傳 VR 環景相片？</a>
           <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text" name="vr_url"
           id="vr_url" value="<?= isset($_POST['vr_url']) ? $_POST['vr_url'] : '' ?>" required />
         </div>
