@@ -59,3 +59,9 @@ session_start();
     </div>
   </div>
 </div>
+
+<script>
+  $('#region').on('change', function () {
+    this.form.submit();
+  });
+</script>
