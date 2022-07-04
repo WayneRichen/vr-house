@@ -417,26 +417,6 @@ video {
   height: auto;
 }
 
-h1 {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-h3 {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-h4 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -743,10 +723,6 @@ h4 {
   display: inline-flex;
 }
 
-.contents {
-  display: contents;
-}
-
 .hidden {
   display: none;
 }
@@ -953,10 +929,6 @@ h4 {
 
 .whitespace-pre {
   white-space: pre;
-}
-
-.break-all {
-  word-break: break-all;
 }
 
 .rounded {
@@ -1246,6 +1218,11 @@ h4 {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-lg {
