@@ -53,7 +53,11 @@ session_start();
         <img src="./static/image/創造一個連結.png">
       </div>
       <div>
-        9. 回到後台貼上即完成！
+        9. 複製網址
+        <img src="./static/image/複製網址.png">
+      </div>
+      <div>
+        10. 回到後台貼上即完成！
         <img src="./static/image/來到頁面貼上即可完成!.png">
       </div>
     </div>
