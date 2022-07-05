@@ -95,8 +95,8 @@
       </li> -->
       </ul>
     </div>
-    <!-- <div class="w-max -mb-3">
-      <a href="#" class="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600">
+    <div class="w-max -mb-3">
+      <a href="./settings.php" class="group flex items-center space-x-4 rounded-md px-4 py-3 text-gray-600">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:fill-cyan-600" viewBox="0 0 20 20"
           fill="currentColor">
           <path fill-rule="evenodd"
@@ -105,6 +105,6 @@
         </svg>
         <span class="group-hover:text-gray-700">Settings</span>
       </a>
-    </div> -->
+    </div>
   </div>
 </div>
